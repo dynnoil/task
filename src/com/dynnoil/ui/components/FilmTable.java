@@ -1,15 +1,14 @@
 package com.dynnoil.ui.components;
 
 import org.apache.tapestry5.Asset;
-import org.apache.tapestry5.MarkupWriter;
-import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.ioc.annotations.Inject;
-
-import java.util.Date;
 
 /**
  * Created by krukov on 20.10.2015.
  */
+
+@Import(stylesheet = "style.css")
 public class FilmTable {
 
     @Parameter(required = true, defaultPrefix = "literal")
@@ -41,7 +40,7 @@ public class FilmTable {
     @Parameter(required = true, defaultPrefix = "literal")
     private String year;
 
-    /*
+    //
     @Parameter(required = true)
     private String director;
 
@@ -52,9 +51,10 @@ public class FilmTable {
     private String aboutFilm;
 
 
-    @Parameter(required = true, value = "")
+    @Inject
+    @Path("noimage.jpg")
+    @Parameter
     private Asset poster;
-    */
 
     public String getFilmNameRu() {
         return this.filmNameRu;
@@ -86,5 +86,21 @@ public class FilmTable {
 
     public String getYear() {
         return this.year;
+    }
+
+    public String getDirector() {
+        return this.director;
+    }
+
+    public String getActors() {
+        return this.actors;
+    }
+
+    public String getAboutFilm() {
+        return this.aboutFilm;
+    }
+
+    public Asset getPoster() {
+        return this.poster;
     }
 }

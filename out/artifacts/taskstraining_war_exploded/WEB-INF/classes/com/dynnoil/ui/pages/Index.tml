@@ -3,6 +3,7 @@
         <title>Hello World Page</title>
     </head>
     <body>
-        <t:filmtable filmNameRu="Охотники за привидениями" filmNameOrig="GhostBusters" country="Russia" duration="2" genre="comedy" is3D="true" movieRental="13" rateMark="2" year="1994"/>
+        <t:filmtable filmNameRu="Охотники за привидениями" filmNameOrig="GhostBusters" country="Russia" duration="2" genre="comedy" is3D="true" movieRental="13" rateMark="2"
+                     year="1994" aboutFilm="literal:jdskjdskjsdkjsdksjdsdkj" actors="literal:klsdf" director="literal:SOmetigds" />
     </body>
 </html>
