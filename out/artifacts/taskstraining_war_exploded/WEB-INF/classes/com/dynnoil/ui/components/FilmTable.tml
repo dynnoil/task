@@ -1,0 +1,34 @@
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+        style="width: 50%; height: 75%; margin: 5%; border: 2px outset #315757;
+        background-color: #63AFAE">
+    <h1>${getFilmNameRu()}</h1>
+    <h2>${getFilmNameOrig()}</h2>
+
+    <div>
+        <ul>
+            <li>
+                Жанр: ${getGenre()}
+            </li>
+
+            <li>
+                Длительность: ${getDuration()} часов
+            </li>
+
+            <li>
+                Рейтинг: ${getRateMark()}+
+            </li>
+
+            <li>
+                В прокате: ${getMovieRental()}
+            </li>
+
+            <li>
+                В прокате: ${getMovieRental()}
+            </li>
+
+            <li>
+                 Страна: ${getCountry()},${getYear()}
+            </li>
+        </ul>
+    </div>
+</div>
