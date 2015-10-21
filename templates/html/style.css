@@ -1,69 +1,40 @@
-div {
-  color: #1d2a2e;
+#topline {
+  position: relative;
+  background-color: #0c2d4e;
+  width: 500px;
+  height: 70px;
 }
 
 #main {
-  height: 600px;
+  left: 37.5%;
+  position: absolute;
+  background-color: #8596a6;
   width: 500px;
-  border: 3px outset #cacdcc;
-  margin-left: 25%;
-  border-radius: 5px;
+  height: 650px;
 }
 
-#top {
-  background-color: #227755;
-  width: 500px;
-  height: 300px;
+#header {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-style: Pompadur;
+  margin-left: 10px;
 }
 
-#bottom {
-  background-color: #C6ECFC;
-  width: 500px;
-  height: 300px;
-}
-
-#mainInfo {
-  float: left;
-  width: 335px;
-  height: 290px;
-  margin: 5px;
-}
-
-#addInfo {
-  float: left;
-  width: 490px;
-  height: 290px;
-  margin: 5px;
-}
-
-#poster {
+#imageplace {
+  position: relative;
+  background-color: #0c2d4e;
   float: right;
-  width: 150px;
-  height: 200px;
-  background-color: black;
-  margin-right: 5px;
-  margin-top: 5px;
+  padding: 10px;
+  width: 180px;
+  height: 220px;
 }
 
-h1 {
-  margin: inherit;
-  margin-left: 10px;
-  width: auto;
-  font-size: 26px;
-}
-
-h2 {
-  margin: inherit;
-  margin-left: 10px;
-  width: auto;
-  font-size: 20px;
-}
-
-p {
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.space {
-  margin: 50px;
+#button {
+  position:relative;
+  background-color: #0c2d4e;
+  width: 80px;
+  height: 40px;
+  top: 500px;
+  left: 37.5%;
 }

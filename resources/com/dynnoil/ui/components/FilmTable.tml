@@ -1,26 +1,9 @@
-<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-    <div id="main">
-        <div id="top">
-            <div id="mainInfo">
-                <h1>Назад в будущее</h1>
-                <h2>Back to the future</h2>
-                <p class="space"/>
-                <p>Жанр: </p>
-                <p>Продолжительность:</p>
-                <p>В прокате с по </p>
-                <p>Производство: </p>
-            </div>
-            <div id="poster">
-                <img src="http://tevom.ru/img_20451.jpg" width="100%" height="100%"/>
-            </div>
+ <div id="main">
+        <div id="topline">
+            <p id="header">Охотники за привидениями, 2D 3D</p>
         </div>
-        <div id="bottom">
-            <div id="addInfo">
-                <p class="space"/>
-                <p>Режиссер: </p>
-                <p>Актеры: </p>
-                <p>Описание: </p>
-            </div>
+        <div id="imageplace">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"
+                 width="100%" height="100%"/>
         </div>
-    </div>
-</div>
+ </div>
