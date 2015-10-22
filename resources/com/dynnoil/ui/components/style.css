@@ -28,3 +28,44 @@
   width: 180px;
   height: 220px;
 }
+
+.lefter {
+  margin-left: 10px;
+}
+
+#about {
+  position:absolute;
+  width: 480px;
+  height: 200px;
+  left: 10px;
+  top: 380px;
+  border-top: 5px double #0c2d4e;
+  padding-top: 10px;
+}
+
+#creators {
+  position:absolute;
+  width: 280px;
+  height: 160px;
+  left: 10px;
+  top: 220px;
+}
+
+#button {
+  position:relative;
+  background-color: #0c2d4e;
+  width: 80px;
+  height: 40px;
+  top: 400px;
+  left: 50%;
+}
+
+#timetable {
+  left: 34.75%;
+  top: 60px;
+  position: absolute;
+  border: 1px solid #0c2d4e;
+  background-color: #8596a6;
+  width: 600px;
+  height: 500px;
+}

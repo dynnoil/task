@@ -3,7 +3,15 @@
         <title>Hello World Page</title>
     </head>
     <body>
-        <t:filmtable rateMark="PLUS_0" actors="Васин В.В., Кипелова В. И." duration="80" aboutFilm="Фильм хороший, что еще сказать" genre="HORROR" filmNameRu="Обычный фильм" year="2012" director="Михалков Н.С."
-                     movieRental='2' country="Russia" t:mixins="choosetime"/>
+        <t:filmtable rateMark="PLUS_0" actors="Билл Мюррей, Дэн Эйкройд, Сигурни Уивер, Харольд Рэмис, Рик Морэнис, Энни Поттс, Уильям Этертон, Эрни Хадсон, Дэвид Маргулис, Стивен Тэш"
+                     duration="80"
+                     aboutFilm="В конце двадцатого века оказывается, что в Нью — Йорке живут не только обычные
+        граждане, но и… привидения. Многомиллионное население не может противостоять натиску сверхъестественного.
+        В конце концов на пути бесчисленных монстров не остается никого — кроме троих ученых — парапсихологов,
+        которым известно все о потустороннем мире, правда только в теории. И теперь им придется оставить пыльные
+        кабинеты и применить свои знания на практике…"
+                     genre="HORROR" filmNameRu="Охотники за привидениями" year="1984" director="Айвен Райтман"
+                     movieRental='2' country="США"
+                     imageAddress="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"/>
     </body>
 </html>

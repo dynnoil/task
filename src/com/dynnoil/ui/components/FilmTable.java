@@ -84,7 +84,7 @@ public class FilmTable {
     private int year;
 
     /**
-     * Режиссео
+     * Режиссер
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
@@ -118,6 +118,18 @@ public class FilmTable {
     @Inject
     private AjaxResponseRenderer ajaxResponseRenderer;
 
+    void onDone() {
+        RenderCommand command = new RenderCommand() {
+            @Override
+            public void render(MarkupWriter markupWriter, RenderQueue renderQueue) {
+                markupWriter.element("input", "t:type", "textfield", "value", "1");
+                markupWriter.end();
+            }
+        };
+
+        ajaxResponseRenderer.addRender("myZone", command);
+    }
+
     void setupRender() {
         format = "2D";
     }
@@ -126,25 +138,6 @@ public class FilmTable {
         if (is3D) {
             format= "2D 3D";
         }
-    }
-
-    void clearupRender() {
-    }
-
-    void onShow() {
-
-        RenderCommand command = new RenderCommand() {
-            @Override
-            public void render(MarkupWriter markupWriter, RenderQueue renderQueue) {
-                markupWriter.element("div","id", "zone");
-                markupWriter.write("SHIT");
-                markupWriter.end();
-            }
-
-        };
-
-        ajaxResponseRenderer.addRender("myZone", command);
-
     }
 
 }

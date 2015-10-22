@@ -38,3 +38,30 @@
   top: 500px;
   left: 37.5%;
 }
+
+#about {
+  position:absolute;
+  width: 480px;
+  height: 200px;
+  left: 10px;
+  top: 370px;
+}
+
+#creators {
+  background-color: #0c2d4e;
+  position:absolute;
+  width: 280px;
+  height: 160px;
+  left: 10px;
+  top: 220px;
+}
+
+#timetable {
+	left: 34.75%;
+  top: 60px;
+  position: absolute;
+  border: 1px solid #0c2d4e;
+  background-color: #8596a6;
+  width: 600px;
+  height: 500px;
+}

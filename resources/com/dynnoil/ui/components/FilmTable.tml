@@ -1,9 +1,30 @@
- <div id="main">
-        <div id="topline">
-            <p id="header">Охотники за привидениями, 2D 3D</p>
-        </div>
-        <div id="imageplace">
-            <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"
-                 width="100%" height="100%"/>
-        </div>
- </div>
+<div id="main"
+     xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+  <form t:type="form">
+    <div id="topline">
+        <p class = "lefter" id="header">${filmNameRu}, ${format} </p>
+    </div>
+    <div id="imageplace">
+        <img src="${imageAddress}"
+             width="100%" height="100%"/>
+    </div>
+    <div>
+        <p class = "lefter"><b>Жанр: </b>${genre}</p>
+
+        <p class = "lefter"><b>Длительность: </b>${duration} мин</p>
+
+        <p class = "lefter"><b>Возрастное ограничение: </b>${rateMark}</p>
+
+        <p class = "lefter"><b>Производство: </b>${country}, ${year}</p>
+    </div>
+    <div id="creators">
+        <p align="justify"><b>Режиссер: </b>${director}</p>
+        <p align="justify"><b>Актеры: </b>${actors}</p>
+    </div>
+    <p id="about" align="justify">${aboutFilm}</p>
+    <t:zone t:id="myZone"/>
+    <a t:type="eventlink" event="done" zone="myZone">
+        <div id="button"></div>
+    </a>
+  </form>
+</div>
