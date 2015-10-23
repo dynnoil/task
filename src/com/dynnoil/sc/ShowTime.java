@@ -1,7 +1,5 @@
 package com.dynnoil.sc;
 
-import org.apache.tapestry5.annotations.Property;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,7 +8,7 @@ import java.util.Date;
  */
 public class ShowTime implements Serializable {
 
-    private Date showDate;
+    private String date;
 
     private String show1;
 
@@ -22,43 +20,37 @@ public class ShowTime implements Serializable {
 
     private String show5;
 
-    public ShowTime() {
-        showDate = new Date();
-        show1 = String.valueOf(showDate.getHours()) + ":" + String.valueOf(showDate.getMinutes());
-        show2 = String.valueOf(showDate.getHours() + 5) + ":" + String.valueOf(showDate.getMinutes() + 30);
-        show3 = String.valueOf(showDate.getHours() + 7) + ":" + String.valueOf(showDate.getMinutes() + 30);
+    public ShowTime(float movieRental) {
+        date = String.valueOf(movieRental) + ".2015";
+        show1 = "12:00";
+        show2 = "14:45";
+        show3 = "16:00";
+        show4 = "18:30";
+        show5 = "20:45";
     }
 
-    public Date getShowDate() {
-        return this.showDate;
-    }
-
-    public void setShowDate(Date showDate) {
-        this.showDate = showDate;
+    public String getDate() {
+        return this.date;
     }
 
     public String getShow1() {
-        return this.show1;
+        return show1;
     }
-
-    public void setShow1(String show1) {
-        this.show1 = show1;
-    }
-
 
     public String getShow2() {
-        return this.show2;
-    }
-
-    public void setShow2(String show2) {
-        this.show2 = show2;
+        return show2;
     }
 
     public String getShow3() {
-        return this.show3;
+        return show3;
     }
 
-    public void setShow3(String show3) {
-        this.show3 = show3;
+    public String getShow4() {
+        return show4;
     }
+
+    public String getShow5() {
+        return show5;
+    }
+
 }

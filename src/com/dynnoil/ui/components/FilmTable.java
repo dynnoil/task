@@ -1,5 +1,6 @@
 package com.dynnoil.ui.components;
 
+import com.dynnoil.sc.Film;
 import com.dynnoil.sc.Genres;
 import com.dynnoil.sc.Rates;
 import org.apache.tapestry5.BindingConstants;
@@ -62,12 +63,11 @@ public class FilmTable {
     private Rates rateMark;
 
     /**
-     * Время проката с такого-то числа по
-     * такое
+     * Число.месяц начала проката
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
-    private int movieRental;
+    private float movieRental;
 
     /**
      * Страна-производитель
@@ -115,26 +115,15 @@ public class FilmTable {
     @Property
     private String format;
 
-    @Inject
-    private AjaxResponseRenderer ajaxResponseRenderer;
-
-    void onDone() {
-        RenderCommand command = new RenderCommand() {
-            @Override
-            public void render(MarkupWriter markupWriter, RenderQueue renderQueue) {
-                markupWriter.element("input", "t:type", "textfield", "value", "1");
-                markupWriter.end();
-            }
-        };
-
-        ajaxResponseRenderer.addRender("myZone", command);
-    }
+    @SessionState
+    private Film film;
 
     void setupRender() {
+        this.film = new Film(filmNameRu, duration, movieRental, country, year);
         format = "2D";
     }
 
-    void beginRender() {
+    void onActivate() {
         if (is3D) {
             format= "2D 3D";
         }

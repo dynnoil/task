@@ -1,0 +1,10 @@
+<html t:type="layout"
+        xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div id="info">
+        <p id="header">${filmNameRu}, ${country} ${year}</p>
+        <p id="duration">${duration} минут</p>
+</div>
+<div id="timetable">
+        <table t:type="grid" source="times" inPlace="true" width="100%" height="93%" rowsPerPage="7" pagerPosition="bottom"/>
+</div>
+</html>

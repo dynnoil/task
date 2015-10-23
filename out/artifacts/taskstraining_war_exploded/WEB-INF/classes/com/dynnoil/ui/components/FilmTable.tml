@@ -1,6 +1,5 @@
 <div id="main"
      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-  <form t:type="form">
     <div id="topline">
         <p class = "lefter" id="header">${filmNameRu}, ${format} </p>
     </div>
@@ -13,6 +12,8 @@
 
         <p class = "lefter"><b>Длительность: </b>${duration} мин</p>
 
+        <p class = "lefter"><b>Начало проката: </b>${movieRental}.2015</p>
+
         <p class = "lefter"><b>Возрастное ограничение: </b>${rateMark}</p>
 
         <p class = "lefter"><b>Производство: </b>${country}, ${year}</p>
@@ -22,9 +23,7 @@
         <p align="justify"><b>Актеры: </b>${actors}</p>
     </div>
     <p id="about" align="justify">${aboutFilm}</p>
-    <t:zone t:id="myZone"/>
-    <a t:type="eventlink" event="done" zone="myZone">
-        <div id="button"></div>
+    <a t:type="pagelink" page="timepage" content="${movieRental}">
+        <div id="button"><p id="buttonText">Показы</p></div>
     </a>
-  </form>
 </div>

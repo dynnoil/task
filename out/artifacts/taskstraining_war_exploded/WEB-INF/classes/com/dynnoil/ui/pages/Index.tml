@@ -1,8 +1,5 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-    <head>
-        <title>Hello World Page</title>
-    </head>
-    <body>
+<html t:type="layout"
+        xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
         <t:filmtable rateMark="PLUS_0" actors="Билл Мюррей, Дэн Эйкройд, Сигурни Уивер, Харольд Рэмис, Рик Морэнис, Энни Поттс, Уильям Этертон, Эрни Хадсон, Дэвид Маргулис, Стивен Тэш"
                      duration="80"
                      aboutFilm="В конце двадцатого века оказывается, что в Нью — Йорке живут не только обычные
@@ -11,7 +8,6 @@
         которым известно все о потустороннем мире, правда только в теории. И теперь им придется оставить пыльные
         кабинеты и применить свои знания на практике…"
                      genre="HORROR" filmNameRu="Охотники за привидениями" year="1984" director="Айвен Райтман"
-                     movieRental='2' country="США"
+                     movieRental='2.05' country="США"
                      imageAddress="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"/>
-    </body>
 </html>

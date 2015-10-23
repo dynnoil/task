@@ -1,0 +1,37 @@
+#timetable {
+    left: 34.75%;
+    top: 110px;
+    position: absolute;
+    border: 1px solid #0c2d4e;
+    background-color: #8596a6;
+    width: 600px;
+    height: 500px;
+}
+
+#info {
+    left: 34.75%;
+    position: absolute;
+    border: 1px solid #0c2d4e;
+    background-color: #0c2d4e;
+    width: 600px;
+    height: 100px;
+}
+
+#header {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+#duration {
+    top: 30px;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.rowStyle {
+    background-color: white;
+}
