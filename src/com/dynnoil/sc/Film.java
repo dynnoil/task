@@ -1,9 +1,5 @@
 package com.dynnoil.sc;
 
-import org.apache.tapestry5.BindingConstants;
-import org.apache.tapestry5.annotations.Parameter;
-import org.apache.tapestry5.annotations.Property;
-
 import java.io.Serializable;
 
 /**
@@ -36,13 +32,19 @@ public class Film implements Serializable {
      */
     private int year;
 
+    /**
+     * Адрес изображения к фильму
+     */
+    private String imageAddress;
+
     public Film(String filmNameRu, int duration, float movieRental,
-                String country, int year) {
+                String country, int year, String imageAddress) {
         this.filmNameRu = filmNameRu;
         this.duration = duration;
         this.movieRental = movieRental;
-        this.country =country;
+        this.country = country;
         this.year = year;
+        this.imageAddress = imageAddress;
     }
 
     public String getFilmNameRu() {
@@ -83,6 +85,14 @@ public class Film implements Serializable {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getImageAddress() {
+        return imageAddress;
+    }
+
+    public void setImageAddress(String imageAddress) {
+        this.imageAddress = imageAddress;
     }
 
 }

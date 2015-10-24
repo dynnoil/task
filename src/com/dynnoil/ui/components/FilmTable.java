@@ -119,7 +119,7 @@ public class FilmTable {
     private Film film;
 
     void setupRender() {
-        this.film = new Film(filmNameRu, duration, movieRental, country, year);
+        this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
         format = "2D";
     }
 

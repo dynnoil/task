@@ -31,3 +31,44 @@
     font-size: 24px;
     margin-left: 10px;
 }
+
+#image {
+    position: absolute;
+    width: 85px;
+    height: 90px;
+    background-color: #8596a6;
+    float: right;
+    right: 10px;
+    top: 5px;
+}
+
+a:link, a:visited, a:active {
+    color: black;
+}
+
+#popup {
+    left: 37%;
+    top: 120px;
+    position: absolute;
+    border: 2px solid #0c2d4e;
+    background-color: #8596a6;
+    width: 500px;
+    height: 400px;
+}
+
+#bookButton {
+    position:relative;
+    background-color: #0c2d4e;
+    width: 80px;
+    height: 40px;
+    top: 320px;
+    left: 37.5%;
+}
+
+#bookButtonText {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white;
+    align: center;
+}

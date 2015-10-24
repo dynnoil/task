@@ -2,9 +2,15 @@ package com.dynnoil.ui.pages;
 
 import com.dynnoil.sc.Film;
 import com.dynnoil.sc.ShowTime;
+import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.Import;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.corelib.components.Zone;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.json.JSONObject;
+import org.apache.tapestry5.services.Request;
 
 import java.util.LinkedList;
 
@@ -44,11 +50,25 @@ public class TimePage {
     @Property(write = false)
     private int year;
 
+    @Property
+    private String imageAddress;
+
     @SessionState
     private Film film;
 
     @Property
+    private ShowTime showTime;
+
+    @Property
     private LinkedList<ShowTime> times;
+
+    @Inject
+    private Request request;
+
+    private String code = "<div id=\"popup\"> %s" +
+            "  <a href=\"http://ya.ru\">\n" +
+            "       <div id=\"bookButton\"><p id=\"bookButtonText\">Book</p></div>\n" +
+            "     </a></div>";
 
     void pageLoaded() {
         filmNameRu = film.getFilmNameRu();
@@ -56,16 +76,26 @@ public class TimePage {
         movieRental = film.getMovieRental();
         country = film.getCountry();
         year = film.getYear();
+        imageAddress = film.getImageAddress();
         times = new LinkedList<ShowTime>();
     }
 
     void onActivate() {
         for (int i = 0; i < 14; i++) {
-            times.add(new ShowTime(movieRental + i));
+            showTime = new ShowTime(movieRental + i);
+            times.add(showTime);
         }
     }
 
     void onPassivate() {
         times.clear();
+    }
+
+    Object onClickTime(String context) {
+        JSONObject json = new JSONObject();
+        json.put("content",String.format(code,context));
+        return request.isXHR()
+                ? json
+                : this;
     }
 }
