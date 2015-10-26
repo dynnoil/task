@@ -1,0 +1,14 @@
+<div id="${clientId}" class="modal hide fade" tabindex="-1"
+     xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">${title}</h3>
+    </div>
+    <div class="modal-body">
+        <t:delegate to="content">
+        </t:delegate></div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Schließen</button>
+    </div>
+</div>

@@ -3,10 +3,7 @@ package com.dynnoil.ui.pages;
 import com.dynnoil.sc.Film;
 import com.dynnoil.sc.ShowTime;
 import org.apache.tapestry5.Block;
-import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.InjectComponent;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
@@ -50,25 +47,47 @@ public class TimePage {
     @Property(write = false)
     private int year;
 
+    /**
+     * Address of film's image (poster)
+     */
     @Property
     private String imageAddress;
 
+    /**
+     * Session state object to
+     * keep beetwen sessions
+     */
     @SessionState
     private Film film;
 
+    /**
+     * Cortege for grid table
+     */
     @Property
     private ShowTime showTime;
 
+
+    /**
+     * List of corteges
+     */
     @Property
     private LinkedList<ShowTime> times;
 
+    /**
+     * Service for checking request
+     */
     @Inject
     private Request request;
 
-    private String code = "<div id=\"popup\"> %s" +
+    /**
+     * HTML code for rendering
+     * div block with info
+     */
+    private String codeForBlock = "<div id=\"popup\"> %s" +
             "  <a href=\"http://ya.ru\">\n" +
             "       <div id=\"bookButton\"><p id=\"bookButtonText\">Book</p></div>\n" +
             "     </a></div>";
+
 
     void pageLoaded() {
         filmNameRu = film.getFilmNameRu();
@@ -81,21 +100,21 @@ public class TimePage {
     }
 
     void onActivate() {
+        times.clear();
         for (int i = 0; i < 14; i++) {
             showTime = new ShowTime(movieRental + i);
             times.add(showTime);
         }
     }
 
-    void onPassivate() {
-        times.clear();
-    }
-
     Object onClickTime(String context) {
         JSONObject json = new JSONObject();
-        json.put("content",String.format(code,context));
+        json.put("content", String.format(codeForBlock, context));
         return request.isXHR()
                 ? json
                 : this;
     }
+
+
+
 }

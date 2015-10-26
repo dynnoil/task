@@ -29,12 +29,11 @@
         </p:show4Cell>
 
         <p:show5Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime">${showTime.show5}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="go">${showTime.show5}</a>
         </p:show5Cell>
 
     </table>
 </div>
-
 <t:zone t:id="myZone"/>
 
 </html>
