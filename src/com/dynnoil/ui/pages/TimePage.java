@@ -8,13 +8,15 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 import java.util.LinkedList;
 
 /**
  * Created by krukov on 23.10.2015.
  */
-@Import(stylesheet = "style.css")
+@Import(library = "jquery-1.11.3.js",
+        stylesheet = "style.css")
 public class TimePage {
 
     /**
@@ -79,15 +81,8 @@ public class TimePage {
     @Inject
     private Request request;
 
-    /**
-     * HTML code for rendering
-     * div block with info
-     */
-    private String codeForBlock = "<div id=\"popup\"> %s" +
-            "  <a href=\"http://ya.ru\">\n" +
-            "       <div id=\"bookButton\"><p id=\"bookButtonText\">Book</p></div>\n" +
-            "     </a></div>";
-
+    @InjectComponent
+    private Zone myZone;
 
     void pageLoaded() {
         filmNameRu = film.getFilmNameRu();
@@ -107,14 +102,9 @@ public class TimePage {
         }
     }
 
-    Object onClickTime(String context) {
-        JSONObject json = new JSONObject();
-        json.put("content", String.format(codeForBlock, context));
-        return request.isXHR()
-                ? json
-                : this;
+
+    Object onClickTime() {
+        return myZone.getBody();
     }
-
-
 
 }

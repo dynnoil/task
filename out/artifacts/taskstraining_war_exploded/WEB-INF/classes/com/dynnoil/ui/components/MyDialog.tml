@@ -1,0 +1,7 @@
+<div id="popup">
+    <div id="topLine">
+        <p id="headerSign">Booking</p>
+        <div id="closeIt" title="Close"></div>
+    </div>
+        <div id="cancelButton"><p id="buttonText">Book</p></div>
+</div>

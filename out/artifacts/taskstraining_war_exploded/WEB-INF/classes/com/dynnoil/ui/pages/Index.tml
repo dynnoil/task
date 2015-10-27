@@ -11,5 +11,5 @@
              genre="HORROR" filmNameRu="Охотники за привидениями" year="1984" director="Айвен Райтман"
              movieRental='2.05' country="США"
              imageAddress="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"/>
-<a t:type="pagelink" page="modaltest">Go test modal dialog</a>
+<a t:type="pagelink" page="modaltest">[See the particles]</a>
 </html>

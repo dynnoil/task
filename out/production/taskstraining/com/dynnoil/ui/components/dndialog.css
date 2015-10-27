@@ -1,0 +1,66 @@
+#popup {
+    left: 37%;
+    top: 120px;
+    position: absolute;
+    border: 3px solid black;
+    background-color: #8596a6;
+    width: 500px;
+    height: 400px;
+}
+
+#topLine {
+    position: relative;
+    width: inherit;
+    height: 35px;
+    border-bottom: 3px solid black;
+    background-color: #0c2d4e;
+}
+
+#buttonText {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white;
+    align: center;
+}
+
+
+
+#cancelButton {
+    border: 2px solid black;
+    border-radius: 7%;
+    position:relative;
+    background-color: #0c2d4e;
+    width: 80px;
+    height: 35px;
+    top: 310px;
+    left: 37.5%;
+}
+
+#bookButtonText {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white;
+    align: center;
+}
+
+#closeIt {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #931414;
+    border: 2px solid black;
+    border-radius: 50%;
+    top: 5px;
+    right: 10px;
+    float: right;
+}
+
+#headerSign {
+    left: 37.5%;
+    margin-top: 7px;
+    position: absolute;
+    color: white;
+    font-size: 18px;
+}
