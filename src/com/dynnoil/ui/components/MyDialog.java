@@ -1,7 +1,11 @@
 package com.dynnoil.ui.components;
 
+import com.dynnoil.ui.pages.ModalTest;
+import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.MarkupWriter;
-import org.apache.tapestry5.annotations.Import;
+import org.apache.tapestry5.annotations.*;
+import org.apache.tapestry5.beaneditor.Validate;
+import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
@@ -11,28 +15,39 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 @Import(library = "jquery/jquery-1.11.3.js",stylesheet = "dndialog.css")
 public class MyDialog {
 
+    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Message")
+    @Property
+    private String title;
+
+    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Empty message!")
+    @Property
+    private String message;
+
+    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Введите ваше имя:")
+    @Property
+    private String fieldOneSign;
+
+    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Введите ваш номер телефона:")
+    @Property
+    private String fieldTwoSign;
+
+    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "OK")
+    @Property
+    private String buttonSign;
+
     @Inject
     private JavaScriptSupport javaScriptSupport;
 
-    /**
-     * Starting render of div element
-     *
-     * @param writer
-     */
-    void beginRender(MarkupWriter writer) {
-        writer.element("div");
-    }
+    @InjectComponent
+    private Form userData;
 
-    /**
-     * Rendering button element (or any if I want add it by parameter)
-     *
-     * @param writer
-     */
-    void afterRenderTemplate(MarkupWriter writer) {
-       // writer.element("button", "id", "openButton");
-        //writer.write("Open Dialog");
-        //writer.end();
-    }
+    @Property
+    @Persist
+    private String customerName;
+
+    @Property
+    @Persist
+    private String numberPhone;
 
     /**
      * End of rendering (writing) div element started
@@ -43,14 +58,12 @@ public class MyDialog {
      * @param writer
      */
     void afterRender(MarkupWriter writer) {
-        writer.end();
         javaScriptSupport.addScript("$j(window).load(function() {" +
                 "$j('div #popup').hide();});" +
-                "$j('div #openButton').click(function() {" +
-                "$j('div #popup').show();}); +" +
+                "$j('div div #okButton').click(function() {" +
+                "$j('div #popup').hide();}); +" +
                 "$j('div div div #closeIt').click(function() {" +
                 "$j('div #popup').hide();});");
     }
-
 
 }

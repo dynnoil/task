@@ -1,7 +1,26 @@
-<div id="popup">
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+  <div id="popup">
     <div id="topLine">
-        <p id="headerSign">Booking</p>
+        <p id="headerSign">${title}</p>
         <div id="closeIt" title="Close"></div>
     </div>
-        <div id="cancelButton"><p id="buttonText">Book</p></div>
+    <div id="message">
+        <p align="center"><b>${message}</b></p>
+        <div id="customerData">
+            <form t:type="form" t:id="userData">
+                <div>
+                    <p>${fieldOneSign}</p>
+                    <input t:type="textfield" t:id="customerName" value="customerName"/>
+                </div>
+                <div>
+                    <p>${fieldTwoSign}</p>
+                    <input t:type="textfield" t:id="numberPhone" value="numberPhone"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="okButton">
+        <p id="buttonText">${buttonSign}</p>
+    </div>
+  </div>
 </div>

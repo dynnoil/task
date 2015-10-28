@@ -23,3 +23,10 @@
     height: 500px;
     background-color: #1c94c4;
 }
+
+#customerData {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 50px;
+}

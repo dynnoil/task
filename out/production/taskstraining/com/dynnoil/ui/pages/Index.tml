@@ -1,15 +1,10 @@
 <html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 <t:filmtable rateMark="PLUS_0"
-             actors="Билл Мюррей, Дэн Эйкройд, Сигурни Уивер, Харольд Рэмис, Рик Морэнис, Энни Поттс, Уильям Этертон, Эрни Хадсон, Дэвид Маргулис, Стивен Тэш"
-             duration="80"
-             aboutFilm="В конце двадцатого века оказывается, что в Нью — Йорке живут не только обычные
-        граждане, но и… привидения. Многомиллионное население не может противостоять натиску сверхъестественного.
-        В конце концов на пути бесчисленных монстров не остается никого — кроме троих ученых — парапсихологов,
-        которым известно все о потустороннем мире, правда только в теории. И теперь им придется оставить пыльные
-        кабинеты и применить свои знания на практике…"
-             genre="HORROR" filmNameRu="Охотники за привидениями" year="1984" director="Айвен Райтман"
-             movieRental='2.05' country="США"
-             imageAddress="https://upload.wikimedia.org/wikipedia/ru/thumb/9/93/Ghostbusters_Poster.jpg/200px-Ghostbusters_Poster.jpg"/>
-<a t:type="pagelink" page="modaltest">[See the particles]</a>
+             actors="${message:ACTORS}"
+             duration="${message:DURATION}"
+             aboutFilm="${message:ABOUT_FILM}"
+             genre="HORROR" filmNameRu="${message:FILM_NAME_RU}" year="${message:YEAR}" director="${message:DIRECTOR}"
+             movieRental="${message:MOVIE_RENTAL}" country="${message:COUNTRY}"
+             imageAddress="${message:IMAGE_ADDRESS}" t:mixins="particles"/>
 </html>

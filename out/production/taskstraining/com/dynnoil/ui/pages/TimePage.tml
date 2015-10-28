@@ -6,37 +6,53 @@
         <img height="100%" width="100%" src="${imageAddress}"/>
     </div>
     <p id="header">${filmNameRu}, ${country} ${year}</p>
-
-    <p id="duration">${duration} минут</p>
+    <p id="duration">${duration} ${message:MINUTE}</p>
 </div>
 <div id="timetable">
-    <table t:type="grid" source="times" inPlace="true" width="100%" height="93%" rowsPerPage="7" pagerPosition="bottom">
+
+    <table t:type="grid" t:id="timeCell" source="times" inPlace="true" width="100%" height="93%" rowsPerPage="7" pagerPosition="bottom">
 
         <p:show1Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime" context="showTime.show1">${showTime.show1}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+               context="0">
+                ${showTime.show1}
+            </a>
         </p:show1Cell>
 
         <p:show2Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime">${showTime.show2}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+               context="1">
+                ${showTime.show2}
+            </a>
         </p:show2Cell>
 
         <p:show3Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime">${showTime.show3}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+               context="2">
+                ${showTime.show3}
+            </a>
         </p:show3Cell>
 
         <p:show4Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime">${showTime.show4}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+               context="3">
+                ${showTime.show4}
+            </a>
         </p:show4Cell>
 
         <p:show5Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="go">${showTime.show5}</a>
+            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+               context="4">
+                ${showTime.show5}
+            </a>
         </p:show5Cell>
 
     </table>
 </div>
 
 <t:zone t:id="myZone">
-    <t:mydialog/>
+    <t:mydialog message="${message:BOOK_TIME} ${bookTime}"
+                title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}"/>
 </t:zone>
 
 </html>

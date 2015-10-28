@@ -4,7 +4,9 @@ import com.dynnoil.sc.Film;
 import com.dynnoil.sc.ShowTime;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.annotations.*;
+import org.apache.tapestry5.corelib.components.Grid;
 import org.apache.tapestry5.corelib.components.Zone;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.Request;
@@ -84,6 +86,18 @@ public class TimePage {
     @InjectComponent
     private Zone myZone;
 
+    /**
+     * Время бронирования
+     */
+    @Property
+    private String bookTime;
+
+    /**
+     * Дата бронирования
+     */
+    @Property
+    private String bookDate;
+
     void pageLoaded() {
         filmNameRu = film.getFilmNameRu();
         duration = film.getDuration();
@@ -103,7 +117,26 @@ public class TimePage {
     }
 
 
-    Object onClickTime() {
+    Object onClickTime(Integer context) {
+        switch (context) {
+            case 0:
+                this.bookTime = showTime.getShow1();
+                break;
+            case 1:
+                this.bookTime = showTime.getShow2();
+                break;
+            case 2:
+                this.bookTime = showTime.getShow3();
+                break;
+            case 3:
+                this.bookTime = showTime.getShow4();
+                break;
+            case 4:
+                this.bookTime = showTime.getShow5();
+                break;
+            default:
+                break;
+        }
         return myZone.getBody();
     }
 
