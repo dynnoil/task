@@ -1,29 +1,25 @@
-<div id="main"
-     xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+<div id="main" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
     <div id="topline">
         <p class = "lefter" id="header">${filmNameRu}, ${format} </p>
     </div>
     <div id="imageplace">
-        <img src="${imageAddress}"
-             width="100%" height="100%"/>
+        <img src="${imageAddress}" width="100%" height="100%"/>
     </div>
     <div id="mainInfo">
-        <p class = "lefter"><b>Жанр: </b>${genre}</p>
-
-        <p class = "lefter"><b>Длительность: </b>${duration} мин</p>
-
-        <p class = "lefter"><b>Начало проката: </b>${movieRental}.2015</p>
-
-        <p class = "lefter"><b>Возрастное ограничение: </b>${rateMark}</p>
-
-        <p class = "lefter"><b>Производство: </b>${country}, ${year}</p>
+        <p class = "lefter"><b>${message:GENRE}</b>${genre}</p>
+        <p class = "lefter"><b>${message:DURATION}</b>${duration} ${message:MINUTE}</p>
+        <p class = "lefter"><b>${message:MOVIE_RENTAL}</b>${movieRental}${message:YEAR}</p>
+        <p class = "lefter"><b>${message:RATE}</b>${rateMark}</p>
+        <p class = "lefter"><b>${message:CREATED}</b>${country}, ${year}</p>
     </div>
     <div id="creators">
-        <p align="justify"><b>Режиссер: </b>${director}</p>
-        <p align="justify"><b>Актеры: </b>${actors}</p>
+        <p align="justify"><b>${message:DIRECTOR}</b>${director}</p>
+        <p align="justify"><b>${message:ACTORS}</b>${actors}</p>
     </div>
     <p id="about" align="justify">${aboutFilm}</p>
     <a t:type="pagelink" page="timepage" content="${movieRental}">
-        <div id="button"><p id="buttonText">Показы</p></div>
+        <div id="button">
+            <p id="buttonText">${message:BUTTON_TEXT}</p>
+        </div>
     </a>
 </div>

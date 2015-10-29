@@ -1,10 +1,10 @@
 <html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-<t:filmtable rateMark="PLUS_0"
+<t:filmtable rateMark="${message:RATE_MARK}"
              actors="${message:ACTORS}"
              duration="${message:DURATION}"
              aboutFilm="${message:ABOUT_FILM}"
-             genre="HORROR" filmNameRu="${message:FILM_NAME_RU}" year="${message:YEAR}" director="${message:DIRECTOR}"
+             genre="${message:GENRE}" filmNameRu="${message:FILM_NAME_RU}" year="${message:YEAR}" director="${message:DIRECTOR}"
              movieRental="${message:MOVIE_RENTAL}" country="${message:COUNTRY}"
              imageAddress="${message:IMAGE_ADDRESS}" t:mixins="particles"/>
 </html>

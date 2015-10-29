@@ -99,7 +99,7 @@
 #cancelButton {
     border: 2px solid black;
     border-radius: 7%;
-    position:relative;
+    position:absolute;
     background-color: #0c2d4e;
     width: 80px;
     height: 35px;

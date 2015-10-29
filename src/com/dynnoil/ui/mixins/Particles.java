@@ -16,14 +16,13 @@ import javax.inject.Inject;
         stylesheet = "particles/demo/css/style.css")
 public class Particles {
 
+
     @Inject
     private JavaScriptSupport javaScriptSupport;
 
     void beginRender(MarkupWriter writer) {
         writer.element("div", "id", "particles-js");
     }
-
-
 
     void afterRender(MarkupWriter writer) {
         writer.end();

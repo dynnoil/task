@@ -1,58 +1,59 @@
 <html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
       xmlns:p="tapestry:parameter">
-<div id="info">
-    <div id="image">
-        <img height="100%" width="100%" src="${imageAddress}"/>
-    </div>
-    <p id="header">${filmNameRu}, ${country} ${year}</p>
-    <p id="duration">${duration} ${message:MINUTE}</p>
-</div>
-<div id="timetable">
+  <div id="info">
+      <div id="image">
+          <img height="100%" width="100%" src="${film.getImageAddress()}"/>
+      </div>
+      <p id="header">${film.getFilmNameRu()}, ${film.getCountry()} ${film.getYear()}</p>
+      <p id="duration">${film.getDuration()} ${message:MINUTE}</p>
+  </div>
 
-    <table t:type="grid" t:id="timeCell" source="times" inPlace="true" width="100%" height="93%" rowsPerPage="7" pagerPosition="bottom">
+  <div id="timetable">
+      <table t:type="grid" t:id="timeCell" source="showDates" inPlace="true" width="100%" height="93%" rowsPerPage="7"
+           pagerPosition="bottom">
 
-        <p:show1Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+        <p:showTimeFirstCell>
+            <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="0">
-                ${showTime.show1}
+                ${dateOfShow.showTimeFifth}
             </a>
-        </p:show1Cell>
+        </p:showTimeFirstCell>
 
-        <p:show2Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+        <p:showTimeSecondCell>
+            <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="1">
-                ${showTime.show2}
+                ${dateOfShow.showTimeSecond}
             </a>
-        </p:show2Cell>
+        </p:showTimeSecondCell>
 
-        <p:show3Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+        <p:showTimeThirdCell>
+            <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="2">
-                ${showTime.show3}
+                ${dateOfShow.showTimeThird}
             </a>
-        </p:show3Cell>
+        </p:showTimeThirdCell>
 
-        <p:show4Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+        <p:showTimeFourthCell>
+            <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="3">
-                ${showTime.show4}
+                ${dateOfShow.showTimeFourth}
             </a>
-        </p:show4Cell>
+        </p:showTimeFourthCell>
 
-        <p:show5Cell>
-            <a style="text-decoration: none" t:type="eventlink" zone="myZone" event="clickTime"
+        <p:showTimeFifthCell>
+            <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="4">
-                ${showTime.show5}
+                ${dateOfShow.showTimeFifth}
             </a>
-        </p:show5Cell>
+        </p:showTimeFifthCell>
 
-    </table>
-</div>
+      </table>
+  </div>
 
-<t:zone t:id="myZone">
-    <t:mydialog message="${message:BOOK_TIME} ${bookTime}"
-                title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}"/>
-</t:zone>
+  <t:zone t:id="dialogZone">
+      <t:mydialog message="${message:BOOK_TIME} ${bookTime}"
+                  title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}" t:mixins="popMessage"/>
+  </t:zone>
 
 </html>

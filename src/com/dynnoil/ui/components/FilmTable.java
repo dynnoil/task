@@ -16,117 +16,121 @@ import java.util.Date;
 /**
  * Created by krukov on 20.10.2015.
  */
-
 @Import(stylesheet = "style.css")
 public class FilmTable {
 
     /**
-     * Название фильма на русском
+     * РќР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String filmNameRu;
 
     /**
-     * Оригинальное название фильма
-     */
-    @Parameter(value = "", defaultPrefix = BindingConstants.LITERAL)
-    @Property
-    private String filmNameOrig;
-
-    /**
-     * Формат 3D
+     * Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ РІ 3D
      */
     @Parameter(value = "false", defaultPrefix = BindingConstants.LITERAL)
     @Property
     private boolean is3D;
 
     /**
-     * Жанр
+     * Р–Р°РЅСЂ
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private Genres genre;
 
     /**
-     * Продолжительность (минуты)
+     * РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ (РјРёРЅСѓС‚С‹)
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private int duration;
 
     /**
-     * Возрастное ограничение
+     * Р РµР№С‚РёРЅРі
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private Rates rateMark;
 
     /**
-     * Число.месяц начала проката
+     * РќР°С‡Р°Р»Рѕ РїСЂРѕРєР°С‚Р°
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private float movieRental;
 
     /**
-     * Страна-производитель
+     * РЎС‚СЂР°РЅР° РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String country;
 
     /**
-     * Год выпуска
+     * Р“РѕРґ
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private int year;
 
     /**
-     * Режиссер
+     * Р РµР¶РёСЃСЃРµСЂ
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String director;
 
     /**
-     * Актерский состав (основные)
+     * РђРєС‚РµСЂСЃРєРёР№ СЃРѕСЃС‚Р°РІ
      */
     @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String actors;
 
     /**
-     * Описание фильма
+     * РРЅС„РѕСЂРјР°С†РёСЏ Рѕ С„РёР»СЊРјРµ
      */
     @Parameter(required = true, defaultPrefix = "literal")
     @Property
     private String aboutFilm;
 
     /**
-     * Адресс изображения к фильму
+     * URL-Р°РґСЂРµСЃ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Рє С„РёР»СЊРјСѓ
      */
     @Parameter(value = "https://im1-tub-ru.yandex.net/i?id=4070294ddfc24e67d971a1b39253a93d&n=33&h=190&w=254", defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String imageAddress;
 
-
+    /**
+     * Р¤РѕСЂРјР°С‚ (2D, 3D)
+     */
     @Property
     private String format;
 
+    /**
+     * Session state РѕР±СЉРµРєС‚ РґР»СЏ
+     * С…СЂР°РЅРµРЅРёСЏ Рё РїРµСЂРµРґР°С‡Рё РёРЅС„РѕСЂРјР°С†РёРё Рѕ С„РёР»СЊРјРµ
+     */
     @SessionState
     private Film film;
 
-    void setupRender() {
+    /**
+     * РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+     */
+    FilmTable() {
         this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
-        format = "2D";
+        this.format="2D";
     }
 
-    void onActivate() {
+    /**
+     * РЎРѕР±С‹С‚РёРµ, РѕР±СЂР°Р±Р°С‚С‹РІР°РµРјРѕРµ РїРµСЂРµРґ
+     * СЂРµРЅРґРµСЂРёРЅРіРѕРј РєРјРїРѕРЅРµРЅС‚Р°
+     */
+    void setupRender() {
         if (is3D) {
-            format= "2D 3D";
+            format = "2D 3D";
         }
     }
-
 }

@@ -16,11 +16,11 @@
                     <p>${fieldTwoSign}</p>
                     <input t:type="textfield" t:id="numberPhone" value="numberPhone"/>
                 </div>
+                <div id="okButton">
+                    <input t:type="submit" t:id="subButton"/>
+                </div>
             </form>
         </div>
-    </div>
-    <div id="okButton">
-        <p id="buttonText">${buttonSign}</p>
     </div>
   </div>
 </div>
