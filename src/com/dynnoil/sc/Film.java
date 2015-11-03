@@ -3,40 +3,54 @@ package com.dynnoil.sc;
 import java.io.Serializable;
 
 /**
+ * РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ С„РёР»СЊРј
+ *
  * Created by krukov on 23.10.2015.
  */
 public class Film implements Serializable {
 
     /**
-     * Название фильма на русском
+     * РќР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
      */
     private String filmNameRu;
 
     /**
-     * Продолжительность (минуты)
+     * РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ (РјРёРЅСѓС‚С‹)
      */
     private int duration;
 
     /**
-     * Число.месяц начала проката
+     * РќР°С‡Р°Р»Рѕ РїСЂРѕРєР°С‚Р° (С‡РёСЃР»Рѕ.РјРµСЃСЏС†)
      */
     private float movieRental;
 
     /**
-     * Страна-производитель
+     * РЎС‚СЂР°РЅР°-РїСЂРѕРёР·РґРѕРґРёС‚РµР»СЊ
      */
     private String country;
 
     /**
-     * Год выпуска
+     * Р“РѕРґ
      */
     private int year;
 
     /**
-     * Адрес изображения к фильму
+     * URL- Р°РґСЂРµСЃ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Рє С„РёР»СЊРјСѓ
      */
     private String imageAddress;
 
+    public Film() {}
+
+    /**
+     * РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+     *
+     * @param filmNameRu -РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
+     * @param duration -РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ (РјРёРЅСѓС‚С‹)
+     * @param movieRental -РЅР°С‡Р°Р»Рѕ РїСЂРѕРєР°С‚Р° (С‡РёСЃР»Рѕ.РјРµСЃСЏС†)
+     * @param country -СЃС‚СЂР°РЅР°
+     * @param year -РіРѕРґ
+     * @param imageAddress -URL-Р°РґСЂРµСЃ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Рє С„РёР»СЊРјСѓ
+     */
     public Film(String filmNameRu, int duration, float movieRental,
                 String country, int year, String imageAddress) {
         this.filmNameRu = filmNameRu;

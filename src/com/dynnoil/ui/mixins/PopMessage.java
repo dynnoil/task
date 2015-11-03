@@ -1,14 +1,19 @@
 package com.dynnoil.ui.mixins;
 
+import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.MixinAfter;
+import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 /**
+ * Класс-миксин, представляющий собой
+ * pop-up окно
+ *
  * Created by krukov on 29.10.2015.
  */
 @Import(library = "jquery/jquery-1.11.3.js",
@@ -16,12 +21,37 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 @MixinAfter
 public class PopMessage {
 
+    /**
+     * Заголовочная надпись окна
+     */
+    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    private String popTitleSign;
+
+    /**
+     * Сообшение внутри окна
+     */
+    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    private String popMessage;
+
+    /**
+     * Внедрение услуги
+     */
     @Inject
     private JavaScriptSupport javaScriptSupport;
 
+    /**
+     * Успех подтверждения формы родительского
+     * компонента
+     */
     @Persist(PersistenceConstants.FLASH)
     private boolean isSuccess;
 
+    /**
+     * Метод-событие, обрабатываемое перед
+     * рендерингом шаблона миксина
+     *
+     * @param writer
+     */
     void beforeRenderTemplate(MarkupWriter writer) {
         //starting popupMessage div
         writer.element("div", "id", "popupMessage");
@@ -29,7 +59,7 @@ public class PopMessage {
         writer.element("div", "id", "messageHeader");
         //starting Header sign
         writer.element("p", "id", "headerSign");
-        writer.write("Success");
+        writer.write(popTitleSign);
         //closing Header sign
         writer.end();
         //closing Header div
@@ -42,7 +72,7 @@ public class PopMessage {
         //starting text inside div
         writer.element("p", "id", "blockText", "align", "center");
         writer.element("b");
-        writer.write("You book ticket successfully!");
+        writer.write(popMessage);
         writer.end();
         //closing text inside div
         writer.end();
@@ -63,6 +93,10 @@ public class PopMessage {
         }
     }
 
+    /**
+     * Событие, обрабатываемое при успешном
+     * подтверждении формы
+     */
     void onSuccess() {
         this.isSuccess = true;
     }

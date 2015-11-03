@@ -1,8 +1,8 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 <head>
-    <title>Kino</title>
+    <title>Kino Park</title>
 </head>
 <body>
-<t:body/>
+    <t:body/>
 </body>
 </html>

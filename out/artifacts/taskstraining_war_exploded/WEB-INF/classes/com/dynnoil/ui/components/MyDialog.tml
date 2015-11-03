@@ -12,12 +12,12 @@
                     <p>${fieldOneSign}</p>
                     <input t:type="textfield" t:id="customerName" value="customerName"/>
                 </div>
-                <div>
+                <div id="phoneNumb">
                     <p>${fieldTwoSign}</p>
-                    <input t:type="textfield" t:id="numberPhone" value="numberPhone"/>
+                    <input t:type="textfield" t:id="numberPhone" value="numberPhone" validate="numeric"/>
                 </div>
                 <div id="okButton">
-                    <input t:type="submit" t:id="subButton"/>
+                    <input t:type="submit"/>
                 </div>
             </form>
         </div>

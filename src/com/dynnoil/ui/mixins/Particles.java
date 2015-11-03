@@ -1,29 +1,44 @@
 package com.dynnoil.ui.mixins;
 
-import org.apache.tapestry5.ClientElement;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.InjectComponent;
-import org.apache.tapestry5.annotations.InjectContainer;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 import javax.inject.Inject;
 
 /**
+ * Класс-миксин, представляющий собой
+ * эффект за заднем фоне компонента
+ * <p/>
  * Created by krukov on 28.10.2015.
  */
 @Import(library = "particles/particles.js",
         stylesheet = "particles/demo/css/style.css")
 public class Particles {
 
-
+    /**
+     * Внедрение услуги для добавления
+     * JavaScript в компонент
+     */
     @Inject
     private JavaScriptSupport javaScriptSupport;
 
+    /**
+     * Событие, обрабатываемое в начале
+     * рендеринга миксина
+     *
+     * @param writer
+     */
     void beginRender(MarkupWriter writer) {
         writer.element("div", "id", "particles-js");
     }
 
+    /**
+     * Событие, обрабатываемое после рендеринга
+     * миксина
+     *
+     * @param writer
+     */
     void afterRender(MarkupWriter writer) {
         writer.end();
         javaScriptSupport.addScript("particlesJS('particles-js',\n" +

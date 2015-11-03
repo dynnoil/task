@@ -53,7 +53,7 @@
 
   <t:zone t:id="dialogZone">
       <t:mydialog message="${message:BOOK_TIME} ${bookTime}"
-                  title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}" t:mixins="popMessage"/>
+                  title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}" t:mixins="popMessage" popTitleSign="${message:POP_TITLE}" popMessage="${message:POP_MESSAGE}"/>
   </t:zone>
 
 </html>

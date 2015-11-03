@@ -4,19 +4,12 @@ import com.dynnoil.sc.Film;
 import com.dynnoil.sc.Genres;
 import com.dynnoil.sc.Rates;
 import org.apache.tapestry5.BindingConstants;
-import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.*;
-import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.runtime.RenderCommand;
-import org.apache.tapestry5.runtime.RenderQueue;
-import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
-
-import java.util.Date;
 
 /**
  * Created by krukov on 20.10.2015.
  */
-@Import(stylesheet = "style.css")
+@Import(stylesheet = "css/style.css")
 public class FilmTable {
 
     /**
@@ -119,18 +112,18 @@ public class FilmTable {
     /**
      * Конструктор
      */
-    FilmTable() {
-        this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
-        this.format="2D";
-    }
+    public FilmTable() {}
 
     /**
      * Событие, обрабатываемое перед
-     * рендерингом кмпонента
+     * рендерингом компонента
      */
     void setupRender() {
-        if (is3D) {
-            format = "2D 3D";
-        }
+         this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
+         if (is3D) {
+             format="3D";
+         } else {
+             format="2D";
+         }
     }
 }
