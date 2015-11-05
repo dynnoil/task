@@ -15,7 +15,7 @@ import java.util.List;
  * <p/>
  * Created by krukov on 23.10.2015.
  */
-@Import(stylesheet = "style.css")
+@Import(library = {"validators.js", "jquery-1.11.3.js"}, stylesheet = "style.css")
 public class TimePage {
 
     /**
@@ -57,6 +57,7 @@ public class TimePage {
     private String bookTime;
 
     public TimePage() {
+        dateOfShow = new DateOfShow();
         showDates = new ArrayList<DateOfShow>();
     }
 
@@ -66,8 +67,7 @@ public class TimePage {
      */
     private void pageLoaded() {
         for (int i = 0; i < 14; i++) {
-            dateOfShow = new DateOfShow(film.getMovieRental() + i);
-            showDates.add(dateOfShow);
+            showDates.add(new DateOfShow(film.getMovieRental() + i));
         }
     }
 
@@ -82,19 +82,19 @@ public class TimePage {
     private Object onClickTime(Integer context) {
         switch (context) {
             case 0:
-                this.bookTime = dateOfShow.getShowTimeFirst();
+                this.bookTime = DateOfShow.SHOW_TIME_FIRST;
                 break;
             case 1:
-                this.bookTime = dateOfShow.getShowTimeSecond();
+                this.bookTime = DateOfShow.SHOW_TIME_SECOND;
                 break;
             case 2:
-                this.bookTime = dateOfShow.getShowTimeThird();
+                this.bookTime = DateOfShow.SHOW_TIME_THIRD;
                 break;
             case 3:
-                this.bookTime = dateOfShow.getShowTimeFourth();
+                this.bookTime = DateOfShow.SHOW_TIME_FOURTH;
                 break;
             case 4:
-                this.bookTime = dateOfShow.getShowTimeFifth();
+                this.bookTime = DateOfShow.SHOW_TIME_FIFTH;
                 break;
             default:
                 break;

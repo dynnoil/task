@@ -6,18 +6,22 @@
         <img src="${imageAddress}" width="100%" height="100%"/>
     </div>
     <div id="mainInfo">
-        <p class = "lefter"><b>${message:GENRE}</b>${genre}</p>
-        <p class = "lefter"><b>${message:DURATION}</b>${duration} ${message:MINUTE}</p>
-        <p class = "lefter"><b>${message:MOVIE_RENTAL}</b>${movieRental}${message:YEAR}</p>
-        <p class = "lefter"><b>${message:RATE}</b>${rateMark}</p>
-        <p class = "lefter"><b>${message:CREATED}</b>${country}, ${year}</p>
+        <ul class="l_list">
+            <li><b>${message:GENRE}</b>${genre}</li>
+            <li><b>${message:DURATION}</b>${duration} ${message:MINUTE}</li>
+            <li><b>${message:MOVIE_RENTAL}</b>${movieRental}${message:YEAR}</li>
+            <li><b>${message:RATE}</b>${rateMark}</li>
+            <li><b>${message:CREATED}</b>${country}, ${year}</li>
+        </ul>
     </div>
     <div id="creators">
-        <p align="justify"><b>${message:DIRECTOR}</b>${director}</p>
-        <p align="justify"><b>${message:ACTORS}</b>${actors}</p>
+        <ul class="l_list">
+            <li><b>${message:DIRECTOR}</b>${director}</li>
+            <li><b>${message:ACTORS}</b>${actors}</li>
+        </ul>
     </div>
     <p id="about" align="justify">${aboutFilm}</p>
-    <a t:type="pagelink" page="timepage" content="${movieRental}">
+    <a t:type="eventlink" event="goTimePage" content="${movieRental}">
         <div id="button">
             <p id="buttonText">${message:BUTTON_TEXT}</p>
         </div>

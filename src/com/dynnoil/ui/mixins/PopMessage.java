@@ -82,8 +82,6 @@ public class PopMessage {
 
         if (!isSuccess) {
             javaScriptSupport.addScript(
-                    "$j('div #closeIt').click(function() {" +
-                    "$j('#popupMessage').hide();});" +
                     "$j('div #popup').show(function() {" +
                     "$j('#popupMessage').hide();});");
         } else {

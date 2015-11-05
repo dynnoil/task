@@ -5,16 +5,16 @@
         <div id="closeIt" title="Close"></div>
     </div>
     <div id="message">
-        <p align="center"><b>${message}</b></p>
+        <p align="center"><b>${mainMessage}</b></p>
         <div id="customerData">
             <form t:type="form" t:id="userData">
                 <div>
-                    <p>${fieldOneSign}</p>
-                    <input t:type="textfield" t:id="customerName" value="customerName"/>
+                    <p>${message:SIGN_ONE}</p>
+                    <input t:type="textfield" t:id="customerName" value="customerName" validate = "required"/>
                 </div>
                 <div id="phoneNumb">
-                    <p>${fieldTwoSign}</p>
-                    <input t:type="textfield" t:id="numberPhone" value="numberPhone" validate="numeric"/>
+                    <p>${message:SIGN_TWO}</p>
+                    <input t:type="textfield" t:id="numberPhone" value="numberPhone" validate="maxlength=12, minlength=10,required, numeric"/>
                 </div>
                 <div id="okButton">
                     <input t:type="submit"/>

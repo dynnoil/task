@@ -32,12 +32,8 @@ public class AppModule {
         configuration.add("numeric", new NumericValidator());
     }
 
-    @Contribute(ComponentMessagesSource.class)
-    public static void provideMessages(
-            @Value("/com/dynnoil/ui/Messages.properties")
-            Resource resource,
-            OrderedConfiguration<Resource> configuration) {
-        configuration.add("Messages", resource);
+    public void contributeComponentMessagesSource(OrderedConfiguration<String> configuration) {
+        configuration.add("myValidationMessages", "com/dynnoil/web/validators/ValidationMessages");
     }
 
 }

@@ -16,7 +16,7 @@
         <p:showTimeFirstCell>
             <a style="text-decoration: none" t:type="eventLink" zone="dialogZone" event="clickTime"
                context="0">
-                ${dateOfShow.showTimeFifth}
+                ${dateOfShow.showTimeFirst}
             </a>
         </p:showTimeFirstCell>
 
@@ -52,8 +52,8 @@
   </div>
 
   <t:zone t:id="dialogZone">
-      <t:mydialog message="${message:BOOK_TIME} ${bookTime}"
-                  title="${message:DIALOG_TITLE}" buttonSign="${message:BUTTON_SIGN}" t:mixins="popMessage" popTitleSign="${message:POP_TITLE}" popMessage="${message:POP_MESSAGE}"/>
+      <t:mydialog mainMessage="${message:BOOK_TIME} ${bookTime}"
+                  title="${message:DIALOG_TITLE}"  t:mixins="popMessage" popTitleSign="${message:POP_TITLE}" popMessage="${message:POP_MESSAGE}"/>
   </t:zone>
 
 </html>

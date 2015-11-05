@@ -39,6 +39,7 @@ body{
 }
 
 canvas{
+  position: absolute;
   display:block;
   vertical-align:bottom;
 }

@@ -1,10 +1,19 @@
 <html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-<t:filmtable rateMark="${message:RATE_MARK}"
+<t:filmtable rateMark="rates.PLUS_0"
              actors="${message:ACTORS}"
-             duration="${message:DURATION}"
+             duration="80"
              aboutFilm="${message:ABOUT_FILM}"
-             genre="${message:GENRE}" filmNameRu="${message:FILM_NAME_RU}" year="${message:YEAR}" director="${message:DIRECTOR}"
-             movieRental="${message:MOVIE_RENTAL}" country="${message:COUNTRY}"
-             imageAddress="${message:IMAGE_ADDRESS}" t:mixins="particles"/>
+             genre="genres.COMEDY" filmNameRu="${message:FILM_NAME_RU}" year="1984" director="${message:DIRECTOR}"
+             movieRental="12.10" country="${message:COUNTRY}"
+             imageAddress="${message:IMAGE_ADDRESS}"/>
+
+<t:filmtable rateMark="rates.PLUS_12"
+             actors="${message:ACTORS}"
+             duration="130"
+             aboutFilm="${message:ABOUT_FILM}"
+             genre="genres.WESTERN" filmNameRu="${message:FILM_NAME_RU}" year="2016" director="${message:DIRECTOR}"
+             movieRental="12.08" country="${message:COUNTRY}"
+             imageAddress="${message:IMAGE_ADDRESS}"/>
+
 </html>

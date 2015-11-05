@@ -15,7 +15,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *
  * Created by krukov on 27.10.2015.
  */
-@Import(library = "jquery/jquery-1.11.3.js",stylesheet = "css/dndialog.css")
+@Import(stylesheet = "css/dndialog.css")
 public class MyDialog implements ClientElement {
 
     /**
@@ -28,37 +28,16 @@ public class MyDialog implements ClientElement {
     /**
      * Название заголовка окна
      */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Message")
+    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
     private String title;
 
     /**
      * Сообщение, передаваемое в окно
      */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Empty message!")
+    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
     @Property
-    private String message;
-
-    /**
-     * Подпись к перному полю ввода
-     */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Введите ваше имя:")
-    @Property
-    private String fieldOneSign;
-
-    /**
-     * Подпись ко второму полю ввода
-     */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "Введите ваш номер телефона:")
-    @Property
-    private String fieldTwoSign;
-
-    /**
-     * Подпись к кнопке
-     */
-    @Parameter(defaultPrefix = BindingConstants.LITERAL, value = "OK")
-    @Property
-    private String buttonSign;
+    private String mainMessage;
 
     /**
      * Внедрение услуги
@@ -77,7 +56,6 @@ public class MyDialog implements ClientElement {
      */
     @Property
     @Persist(PersistenceConstants.FLASH)
-    @Validate("required")
     private String customerName;
 
     /**
@@ -85,7 +63,6 @@ public class MyDialog implements ClientElement {
      */
     @Property
     @Persist(PersistenceConstants.FLASH)
-    @Validate("maxlength=12, minlength=10, required")
     private String numberPhone;
 
     /**

@@ -19,7 +19,7 @@ public class NumericValidator extends AbstractValidator<Void, String> {
     @Override
     public void validate(Field field, Void aVoid, MessageFormatter formatter, String s)
             throws ValidationException {
-        if (!s.matches("[0-9]")) {
+        if (!s.matches("[+0-9]+")) {
             throw new ValidationException(buildMessage(formatter, field));
         }
     }

@@ -7,7 +7,7 @@
 
 #main {
   left: 37.5%;
-  position: absolute;
+  position: relative;
   background-color: #8596a6;
   width: 500px;
   height: 650px;

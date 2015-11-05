@@ -1,0 +1,16 @@
+.firstBlock {
+  background-color: red;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 100px;
+}
+
+.secondBlock {
+  display: block;
+  position: absolute;
+  left: 100px;
+  background-color: green;
+  width: 200px;
+  height: 200px;
+}

@@ -3,6 +3,7 @@ package com.dynnoil.ui.components;
 import com.dynnoil.sc.Film;
 import com.dynnoil.sc.Genres;
 import com.dynnoil.sc.Rates;
+import com.dynnoil.ui.pages.TimePage;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.annotations.*;
 
@@ -29,30 +30,30 @@ public class FilmTable {
     /**
      * Жанр
      */
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     @Property
     private Genres genre;
 
     /**
      * Продолжительность (минуты)
      */
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     @Property
     private int duration;
 
     /**
      * Рейтинг
      */
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     @Property
     private Rates rateMark;
 
     /**
      * Начало проката
      */
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     @Property
-    private float movieRental;
+    private double movieRental;
 
     /**
      * Страна производитель
@@ -64,7 +65,7 @@ public class FilmTable {
     /**
      * Год
      */
-    @Parameter(required = true, defaultPrefix = BindingConstants.LITERAL)
+    @Parameter(required = true)
     @Property
     private int year;
 
@@ -113,6 +114,11 @@ public class FilmTable {
      * Конструктор
      */
     public FilmTable() {}
+
+    private Object onGoTimePage() {
+        this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
+        return TimePage.class;
+    }
 
     /**
      * Событие, обрабатываемое перед
