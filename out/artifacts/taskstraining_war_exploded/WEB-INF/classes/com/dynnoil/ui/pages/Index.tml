@@ -1,19 +1,28 @@
 <html t:type="layout"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+
 <t:filmtable rateMark="rates.PLUS_0"
              actors="${message:ACTORS}"
              duration="80"
              aboutFilm="${message:ABOUT_FILM}"
              genre="genres.COMEDY" filmNameRu="${message:FILM_NAME_RU}" year="1984" director="${message:DIRECTOR}"
-             movieRental="12.10" country="${message:COUNTRY}"
+             movieRentalDate="24.01.2015" country="${message:COUNTRY}"
              imageAddress="${message:IMAGE_ADDRESS}"/>
 
 <t:filmtable rateMark="rates.PLUS_12"
-             actors="${message:ACTORS}"
-             duration="130"
-             aboutFilm="${message:ABOUT_FILM}"
-             genre="genres.WESTERN" filmNameRu="${message:FILM_NAME_RU}" year="2016" director="${message:DIRECTOR}"
-             movieRental="12.08" country="${message:COUNTRY}"
-             imageAddress="${message:IMAGE_ADDRESS}"/>
+             actors="${message:ACTORS_1}"
+             duration="121"
+             aboutFilm="${message:ABOUT_FILM_1}" is3D="true"
+             genre="genres.DRAMA" filmNameRu="${message:FILM_NAME_RU_1}" year="2015" director="${message:DIRECTOR}"
+             movieRentalDate="05.10.2015" country="${message:COUNTRY}"
+             imageAddress="${message:IMAGE_ADDRESS_1}"/>
+
+<t:filmtable rateMark="rates.PLUS_6"
+             actors="${message:ACTORS_2}"
+             duration="122"
+             aboutFilm="${message:ABOUT_FILM_2}"
+             genre="genres.CRIME" filmNameRu="${message:FILM_NAME_RU_2}" year="2015" director="${message:DIRECTOR_2}"
+             movieRentalDate="08.10.2015" country="${message:COUNTRY}"
+             imageAddress="${message:IMAGE_ADDRESS_2}"/>
 
 </html>

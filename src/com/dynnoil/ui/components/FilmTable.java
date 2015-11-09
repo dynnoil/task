@@ -51,9 +51,9 @@ public class FilmTable {
     /**
      * Начало проката
      */
-    @Parameter(required = true)
+    @Parameter(required = true, cache = false, defaultPrefix = BindingConstants.LITERAL)
     @Property
-    private double movieRental;
+    private String movieRentalDate;
 
     /**
      * Страна производитель
@@ -116,7 +116,7 @@ public class FilmTable {
     public FilmTable() {}
 
     private Object onGoTimePage() {
-        this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
+        this.film = new Film(filmNameRu, duration, movieRentalDate, country, year, imageAddress);
         return TimePage.class;
     }
 
@@ -125,7 +125,7 @@ public class FilmTable {
      * рендерингом компонента
      */
     void setupRender() {
-         this.film = new Film(filmNameRu, duration, movieRental, country, year, imageAddress);
+         this.film = new Film(filmNameRu, duration, movieRentalDate, country, year, imageAddress);
          if (is3D) {
              format="3D";
          } else {

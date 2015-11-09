@@ -22,7 +22,7 @@ public class Film implements Serializable {
     /**
      * Начало проката (число.месяц)
      */
-    private double movieRental;
+    private String movieRentalDate;
 
     /**
      * Страна-произдодитель
@@ -46,16 +46,16 @@ public class Film implements Serializable {
      *
      * @param filmNameRu -название фильма
      * @param duration -продолжительность (минуты)
-     * @param movieRental -начало проката (число.месяц)
+     * @param movieRentalDate -начало проката (число.месяц)
      * @param country -страна
      * @param year -год
      * @param imageAddress -URL-адрес изображения к фильму
      */
-    public Film(String filmNameRu, int duration, double movieRental,
+    public Film(String filmNameRu, int duration, String movieRentalDate,
                 String country, int year, String imageAddress) {
         this.filmNameRu = filmNameRu;
         this.duration = duration;
-        this.movieRental = movieRental;
+        this.movieRentalDate = movieRentalDate;
         this.country = country;
         this.year = year;
         this.imageAddress = imageAddress;
@@ -77,12 +77,12 @@ public class Film implements Serializable {
         this.duration = duration;
     }
 
-    public double getMovieRental() {
-        return movieRental;
+    public String getMovieRentalDate() {
+        return movieRentalDate;
     }
 
-    public void setMovieRental(double movieRental) {
-        this.movieRental = movieRental;
+    public void setMovieRentalDate(String movieRentalDate) {
+        this.movieRentalDate = movieRentalDate;
     }
 
     public String getCountry() {

@@ -9,7 +9,7 @@
         <ul class="l_list">
             <li><b>${message:GENRE}</b>${genre}</li>
             <li><b>${message:DURATION}</b>${duration} ${message:MINUTE}</li>
-            <li><b>${message:MOVIE_RENTAL}</b>${movieRental}${message:YEAR}</li>
+            <li><b>${message:MOVIE_RENTAL}</b>${movieRentalDate}</li>
             <li><b>${message:RATE}</b>${rateMark}</li>
             <li><b>${message:CREATED}</b>${country}, ${year}</li>
         </ul>
@@ -21,7 +21,7 @@
         </ul>
     </div>
     <p id="about" align="justify">${aboutFilm}</p>
-    <a t:type="eventlink" event="goTimePage" content="${movieRental}">
+    <a t:type="eventlink" event="goTimePage" content="${movieRentalDate}">
         <div id="button">
             <p id="buttonText">${message:BUTTON_TEXT}</p>
         </div>

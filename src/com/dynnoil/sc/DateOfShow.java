@@ -1,6 +1,8 @@
 package com.dynnoil.sc;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -50,14 +52,15 @@ public class DateOfShow implements Serializable {
     /**
      * Конструктор класса
      *
-     * @param movieRental - число.месяц начала показа
+     * @param movieRentalDate - число.месяц начала показа
      */
-    public DateOfShow(double movieRental) {
-        int day = (int) movieRental;
-        double month = (movieRental - day);
-        showDate = new Date(new Date().getYear(),
-                (month < 1.0) ? (int) (month * 9.9) : (int) (month * 99.9),
-                day);
+    public DateOfShow(String movieRentalDate, int add) throws ParseException {
+        int dot = movieRentalDate.indexOf('.');
+        String onlyDay = movieRentalDate.substring(0, dot);
+        String withoutDay = movieRentalDate.substring(dot, movieRentalDate.length());
+        int day = Integer.parseInt(onlyDay) + add;
+        movieRentalDate = String.valueOf(day) + withoutDay;
+        showDate = new SimpleDateFormat("dd.MM.yyyy").parse(movieRentalDate);
     }
 
     public Date getShowDate() {

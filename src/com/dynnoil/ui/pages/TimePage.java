@@ -7,6 +7,7 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.Request;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,13 +63,21 @@ public class TimePage {
     }
 
     /**
-     * Событие, обрабатываемое при загрузке
-     * страницы (создании)
+     * Событие, обрабатываемое при наступлении
+     * состояния активации страницы
      */
-    private void pageLoaded() {
+    private void onActivate() throws ParseException {
         for (int i = 0; i < 14; i++) {
-            showDates.add(new DateOfShow(film.getMovieRental() + i));
+            showDates.add(new DateOfShow(film.getMovieRentalDate(), i));
         }
+    }
+
+    /**
+     * Событие, обрабатываемое при наступлении
+     * состояния пассивации страницы
+     */
+    private void onPassivate() {
+        showDates.clear();
     }
 
     /**
